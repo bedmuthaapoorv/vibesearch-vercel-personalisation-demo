@@ -14,7 +14,7 @@ export default async function vibeIt(
   setSearchId: any,
   search_id:any
 ) {
-  console.log("inside vibe it");
+  console.log("inside vibe it"+mainQuery);
   if (mainQuery == "" && secondaryQuery == "") return;
   let data = {
     query: {

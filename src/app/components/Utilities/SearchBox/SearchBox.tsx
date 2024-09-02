@@ -74,13 +74,11 @@ export default function SearchBox(placeholder: string = "What are you looking fo
                   reader.onload = (event: any) => {
                     const base64String: any = event.target.result as string;
                     setFile(base64String)
-                    //console.log(base64String);
                     let temp: any = base64String.split(";")
                     temp = temp[1].split(",")
-
-                    // You can do whatever you want with the base64String here
                     localStorage.setItem("image-file", temp[1]);
                     router.push(`/components/SearchResults?imageSearch=${temp[1].slice(-5)}&query=emptyEntry`);
+                    window.location.assign(window.location.href)
                   };
                   reader.readAsDataURL(file);
                 }
